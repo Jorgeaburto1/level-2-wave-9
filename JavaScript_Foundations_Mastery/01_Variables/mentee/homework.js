@@ -4,7 +4,7 @@
 // Open DevTools → Console to see your results.
 
 // STEP 1: Create a variable called fullName (string) with your full name.
-
+const fullName = "jorge Aburto";
 // STEP 2: Create a variable called profileAge (number) with your age.
 
 // STEP 3: Create a variable called country (string) with the country you live in.
