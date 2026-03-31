@@ -14,7 +14,7 @@ let favoriteHobby = ("surfing");
 // STEP 5: Create a variable called isStudent (boolean) with true or false,
 //         depending on whether you consider yourself a student right now.
 const isStundent = true;
-console.log(isStundent)
+
 // STEP 6: Use console.log to print the profile in a clear format, for example:
 //         --- PROFILE CARD ---
 //         Name: (your name)
@@ -28,12 +28,20 @@ console.log(` Name: ${fullName}\n Age: ${profileAge} \n Country: ${profileCountr
 //         to show the updated information.
 
 favoriteHobby = ("Gaming");
-console.log(` Name: ${fullName}\n Age: ${profileAge} \n Country: ${profileCountry} \n Hobby: ${favoriteHobby} \n Is student? ${isStundent}`);
+console.log(` --- PROFILE CARD --- \n Name: ${fullName}\n Age: ${profileAge} \n Country: ${profileCountry} \n Hobby: ${favoriteHobby} \n Is student? ${isStundent}`);
 
 const hobbies = ["Gaming", "Surfing"];
 
-console.log(` Name: ${fullName}\n Age: ${profileAge} \n Country: ${profileCountry} \n Hobby: ${hobbies} \n Is student? ${isStundent}`);
+console.log(` --- PROFILE CARD --- \n Name: ${fullName}\n Age: ${profileAge} \n Country: ${profileCountry} \n Hobby: ${hobbies} \n Is student? ${isStundent}`);
 
 hobbies.push("Working out");
 
-console.log(` Name: ${fullName}\n Age: ${profileAge} \n Country: ${profileCountry} \n Hobby: ${hobbies} \n Is student? ${isStundent}`);
+console.log(` --- PROFILE CARD --- \n Name: ${fullName}\n Age: ${profileAge} \n Country: ${profileCountry} \n Hobby: ${hobbies} \n Is student? ${isStundent}`);
+
+
+console.log(` --- PROFILE CARD --- 
+    Name: ${fullName}
+    Age: ${profileAge} 
+    Country: ${profileCountry} 
+    Hobby: ${hobbies} 
+    Is student? ${isStundent}`);
