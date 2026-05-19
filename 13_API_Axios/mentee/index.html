@@ -2,7 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>API Mini Tasks</title>
+    <title>Axios API Mini Lab</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -16,12 +17,12 @@
     <!-- STEP 3 — Add the card title -->
     <!-- Add an <h1> element -->
     <!-- class: "card-title" -->
-    <!-- Text: "API Mini Lab" -->
+    <!-- Text: "Axios API Mini Lab" -->
 
     <!-- STEP 4 — Add the card subtitle -->
     <!-- Add a <p> element -->
     <!-- class: "card-subtitle" -->
-    <!-- Mention using fetch and public APIs -->
+    <!-- Mention axios and async/await -->
 
     <!-- STEP 5 — Create the first widget (Random Advice) -->
     <!-- Add a <section> with class "widget" -->
@@ -64,16 +65,16 @@
 
     <!-- STEP 14 — Add the widget title -->
     <!-- Add an <h2> -->
-    <!-- Text: "3. Random Space Photo" -->
+    <!-- Text: "3. Random Space Photo (NASA APOD)" -->
 
-    <!-- STEP 15 — Add the space activity text display -->
-    <!-- Add a <p> element -->
+    <!-- STEP 15 — Add the space display container -->
+    <!-- Add a <div> -->
     <!-- class: "widget-text" -->
-    <!-- id: "activityText" -->
+    <!-- id: "spaceDisplay" -->
 
     <!-- STEP 16 — Add the space photo button -->
     <!-- Add a <button> -->
-    <!-- id: "activityBtn" -->
+    <!-- id: "spaceBtn" -->
     <!-- class: "btn ghost" -->
     <!-- Text: "Get Space Photo" -->
 
@@ -87,16 +88,16 @@
     <!-- src="script.js" -->
     <main class="page">
       <section class="card">
-        <h1 class="card-title">API Mini Project</h1>
+        <h1 class="card-title">Axios API Mini Project</h1>
         <p class="card-subtitle">
-          Use <code>fetch</code> to call simple public APIs and show the results
-          on the page.
+          Use <code>axios</code> (via CDN) + <code>async/await</code> to call
+          simple public APIs and show the results.
         </p>
 
         <section class="widget">
           <h2>1. Random Advice</h2>
           <p class="widget-text" id="adviceText">
-            Click the button to get a piece of advice from an API.
+            Click the button to get a piece of advice.
           </p>
           <button id="adviceBtn" class="btn primary">Get Advice</button>
         </section>
@@ -104,24 +105,22 @@
         <section class="widget">
           <h2>2. Random Cat Fact</h2>
           <p class="widget-text" id="catFactText">
-            Click the button to get a cat fact from an API.
+            Click the button to get a random cat fact.
           </p>
           <button id="catFactBtn" class="btn secondary">Get Cat Fact</button>
         </section>
 
         <section class="widget">
-          <h2>3. Random Space Photo/Video</h2>
-          <p class="widget-text" id="activityText">
-            Click the button to get the daily NASA space image.
-          </p>
-          <button id="activityBtn" class="btn ghost">
-            Get Space Photo/Video
-          </button>
+          <h2>3. Random Space Photo (NASA APOD)</h2>
+          <div class="widget-text" id="spaceDisplay">
+            Click the button to see today's NASA space image.
+          </div>
+          <button id="spaceBtn" class="btn ghost">Get Space Photo</button>
         </section>
 
         <p class="hint">
           Open <code>script.js</code> and follow each STEP. Use DevTools →
-          Network to see the requests.
+          Network to see the Axios requests.
         </p>
       </section>
     </main>

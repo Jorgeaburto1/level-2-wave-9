@@ -140,7 +140,7 @@ catFactBtn.addEventListener("click", () => {
 //                        • Display apod.explanation
 //
 spaceBtn.addEventListener("click", () => {
-  spaceText.innerHTML = "Loading space photo...";
+  spaceText.innerHTML = "Loading space photo or video...";
 
   let apiUrl = "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&count=1";
   fetch(apiUrl)
@@ -153,7 +153,24 @@ spaceBtn.addEventListener("click", () => {
     .then((data) => {
       const apod = data[0];
       if (apod.media_type === "video") {
+        spaceText.innerHTML = `
+     <h3>${apod.title}</h3>
+     <p>${apod.explanation}</p> 
+     <a href = "${apod.url}" target="_blank">Open the space video</a> 
+
+     `;
+      } else {
+        spaceText.innerHTML = `
+        <h3>${apod.title}</h3>
+        <img src="${apod.url}" alt="${apod.title}" style="max-width: 100%; border-radius: 12px;"/>
+        <p>${apod.explanation}</p>
+        `;
       }
+    })
+    .catch((error) => {
+      console.error(error);
+      spaceText.textContent =
+        "Could not load space video/photo, try again later";
     });
 });
 // STEP 5: Add a .catch(...) at the end.
