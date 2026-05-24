@@ -19,6 +19,14 @@
 //         - countryPopulationDisplay (id "countryPopulationDisplay")
 //         - countryStatusMessage (id "countryStatusMessage")
 
+const countryInput = document.getElementById("countryInput");
+const searchCountryBtn = document.getElementById("searchCountryBtn");
+const countryNameDisplay = document.getElementById("countryNameDisplay");
+const countryCapitalDisplay = document.getElementById("countryCapitalDisplay");
+const countryRegionDisplay = document.getElementById("countryRegionDisplay");
+const countryPopulationDisplay = document.getElementById("countryPopulationDisplay");
+const countryStatusMessage = document.getElementById("countryStatusMessage");
+
 // ==============================================
 // STEP 2 – ADD CLICK EVENT (ASYNC FUNCTION)
 // ==============================================
@@ -66,3 +74,45 @@
 //           - Log the error to the console.
 //           - Set countryStatusMessage.textContent to something like:
 //             "Could not load country info. Please check the name and try again.".
+
+searchCountryBtn.addEventListener("click", async () => {
+const countryName = countryInput.value.trim();
+
+if (countryName === ""){
+    countryStatusMessage.textContent = "Please type a country name.";
+    return
+} else {
+    const url = "https://restcountries.com/v3.1/name/" + encodeURIComponent(countryName) + "?fields=name,capital,region,population";
+    countryStatusMessage.textContent = "Loading..." 
+    
+    countryNameDisplay.textContent = "Country: —";
+    countryCapitalDisplay.textContent = "Capital: —";
+    countryRegionDisplay.textContent = "Region: —";
+    countryPopulationDisplay.textContent = "Population: —";
+
+    try{
+        const response = await axios.get(url);
+        const data = response.data[0];
+         countryNameDisplay.textContent = "Country: " + data.name.common;
+         countryCapitalDisplay.textContent = "Capital: " + data.capital[0];
+         countryRegionDisplay.textContent = "Region: " + data.region;
+         countryPopulationDisplay.textContent = "Population: " + data.population.toLocaleString();
+    
+         countryStatusMessage.textContent = "Country information loaded successfully.";
+
+    } catch(error){
+        console.error(error);
+
+        if(error.response) {
+            countryStatusMessage.textContent = "Country not found. Try another name.";
+        } else if (error.request){
+            countryStatusMessage.textContent = "No internet connection";
+        } else {
+            countryStatusMessage.textContent = "something went wrong. try again";
+        }
+
+    }
+}
+
+});
+

@@ -147,13 +147,13 @@ spaceBtn.addEventListener("click", async () =>{
       <h3>${data.title}</h3>
       <img src="${data.url}" alt="${data.title}">
       <p>${data.explanation}</p>
-      `
+      `;
     } else{
       spaceDisplay.innerHTML = `
       <h3>${data.title}</h3>
       <p>${data.explanation}</p>
       <a href="${data.url}" target="_blank">Open Space Video</a>
-      `
+      `;
     }
   } catch (error) {
     console.error(error);

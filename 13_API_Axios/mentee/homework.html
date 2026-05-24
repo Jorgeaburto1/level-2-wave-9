@@ -68,5 +68,25 @@
     <!-- STEP 13 — Link JavaScript -->
     <!-- Add a <script> tag at the bottom of the body -->
     <!-- src="homework.js" -->
+     <main>
+      <section class="card">
+        <h1>Country info viewer Axios</h1>
+        <p class="subtitle">Axios and async/await</p>
+        <div class="field-row">
+          <label for="countryInput">Country Name</label>
+          <input id="countryInput" type="text" placeholder="Mexico, Japan, Brazil">
+          <button id="searchCountryBtn" class="btn primary">Search Country</button>
+        </div>
+        <div class="info-block">
+         <h2 id="countryNameDisplay"></h2>
+         <p id="countryCapitalDisplay"></p>
+         <p id="countryRegionDisplay"></p>
+         <p id="countryPopulationDisplay"></p>
+         <p id="countryStatusMessage" class="status-messageS"></p>
+         <p class="hint">Open homework.js and follow each STEP. Use DevTools → Network to see the request to restcountries.com</p>
+        </div>
+      </section>
+     </main>
   </body>
+  <script src="homework.js"></script>
 </html>
